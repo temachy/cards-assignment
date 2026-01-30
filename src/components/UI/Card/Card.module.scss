@@ -1,6 +1,6 @@
 .card {
-    width: 300px;
-    min-height: 300px;
+    width: 330px;
+    min-height: 350px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -27,6 +27,7 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        line-height: 1.2;
     }
 
     .description {
@@ -37,7 +38,13 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
+        line-height: 1.2;
+    }
 
+    .image {
+        height: 250px;
+        object-fit: cover;
+        text-rendering: pixelated;
     }
 
 }
