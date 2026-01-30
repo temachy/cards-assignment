@@ -1,0 +1,25 @@
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.star {
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+.filled {
+    color: #fbbf24;
+}
+
+.empty {
+    color: #d1d5db;
+}
+
+.ratingText {
+    font-size: 12px;
+    color: slateGray;
+    margin-left: 6px;
+}
