@@ -3,5 +3,6 @@ export type Trip = {
   name: string
   image: string
   description: string
+  long_description: string
   rating: number
 }
