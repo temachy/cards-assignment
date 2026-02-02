@@ -1,3 +1,4 @@
+import { memo } from "react";
 import styles from "./Card.module.scss";
 import { Rating } from "../Rating";
 
@@ -26,4 +27,4 @@ const Card = ({ title, description, rating, image, onClick }: CardProps) => (
   </div>
 );
 
-export default Card;
+export default memo(Card);
