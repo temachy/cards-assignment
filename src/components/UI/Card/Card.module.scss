@@ -6,12 +6,6 @@
     overflow: hidden;
     background-color: white;
     border-radius: 10px;
-    cursor: pointer;
-    transition: 0.2s;
-
-    &:hover {
-        transform: scale(1.1);
-    }
 
     .content {
         padding: 15px;
@@ -45,6 +39,21 @@
         height: 250px;
         object-fit: cover;
         text-rendering: pixelated;
+    }
+
+    .rating_wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .button {
+        font-size: 12px;
+        background-color: #007bff;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
     }
 
 }
