@@ -1,6 +1,6 @@
 import styles from "./TripCards.module.scss";
 import { useTripCards } from "./useTripCards";
-import { Card, Modal, Rating } from "../UI";
+import { Card, Image, Modal, Rating } from "../UI";
 
 const TripCards = () => {
   const {
@@ -13,7 +13,6 @@ const TripCards = () => {
     onRatingSort,
     onSearch,
   } = useTripCards();
-
   return (
     <div className={styles.container}>
       <div className={styles.sidebar}>
@@ -59,7 +58,7 @@ const TripCards = () => {
               <h2 className={styles.details__title}>{selectedTrip.name}</h2>
               <Rating rating={selectedTrip.rating} />
             </div>
-            <img
+            <Image
               src={selectedTrip.image}
               alt={selectedTrip.name}
               className={styles.details__image}

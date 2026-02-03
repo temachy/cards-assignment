@@ -1,6 +1,7 @@
 import { memo } from "react";
 import styles from "./Card.module.scss";
 import { Rating } from "../Rating";
+import { Image } from "../Image";
 
 type CardProps = {
   title: string;
@@ -12,7 +13,7 @@ type CardProps = {
 
 const Card = ({ title, description, rating, image, onClick }: CardProps) => (
   <div className={styles.card}>
-    <img src={image} alt={title} className={styles.image} />
+    <Image src={image} alt={title} className={styles.image} />
 
     <div className={styles.content}>
       <h2 className={styles.title}>{title}</h2>
