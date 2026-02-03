@@ -5,10 +5,13 @@ import type { Trip } from "../../types/trip.types";
 import { sortAndFilterTrips } from "./utils";
 
 export const useTripCards = () => {
-  const { data: trips = [] } = useQuery<Trip[]>({
+  const {
+    data: trips = [],
+    isLoading,
+    error,
+  } = useQuery<Trip[]>({
     queryKey: ["trips"],
     queryFn: fetchTrips,
-    throwOnError: true,
   });
 
   const [searchValue, setSearchValue] = useState("");
@@ -39,6 +42,8 @@ export const useTripCards = () => {
 
   return {
     trips: sortedAndFilteredTrips,
+    isLoading,
+    error,
     openModal,
     closeModal,
     selectedTrip,

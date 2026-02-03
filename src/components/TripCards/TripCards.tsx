@@ -12,6 +12,8 @@ const TripCards = () => {
     isRatingSortEnabled,
     onRatingSort,
     onSearch,
+    isLoading,
+    error,
   } = useTripCards();
   return (
     <div className={styles.container}>
@@ -48,8 +50,13 @@ const TripCards = () => {
           />
         ))}
       </div>
-      {!trips.length && !!searchValue && (
+      {!trips.length && !isLoading && (
         <p className={styles.noTripsFound}>No trips found</p>
+      )}
+      {error && (
+        <p className={styles.noTripsFound}>
+          Error loading trips, details: {error.message}
+        </p>
       )}
       <Modal isOpen={!!selectedTrip} onClose={closeModal}>
         {selectedTrip && (
