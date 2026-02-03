@@ -19,7 +19,7 @@ const Card = ({ title, description, rating, image, onClick }: CardProps) => (
       <h2 className={styles.title}>{title}</h2>
       <div className={styles.rating_wrap}>
         <Rating rating={rating} />
-        <button onClick={onClick} className={styles.button}>
+        <button type="button" onClick={onClick} className={styles.button}>
           More Info
         </button>
       </div>

@@ -9,6 +9,7 @@ const Image = (props: ImageProps) => (
       event.currentTarget.src = notFoundImage;
       event.currentTarget.onerror = null;
     }}
+    loading="lazy"
   />
 );
 

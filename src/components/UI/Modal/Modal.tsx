@@ -11,8 +11,12 @@ const CrossIcon = () => <>&times;</>;
 const Modal = ({ isOpen, onClose, children }: ModalProps) =>
   !!isOpen && (
     <div className={styles.backdrop}>
-      <div className={styles.modal}>
-        <button className={styles.closeButton} onClick={onClose}>
+      <div className={styles.modal} role="dialog" aria-modal="true">
+        <button
+          aria-label="Close modal"
+          className={styles.closeButton}
+          onClick={onClose}
+        >
           <CrossIcon />
         </button>
         {children}

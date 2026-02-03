@@ -8,6 +8,7 @@ export const useTripCards = () => {
   const { data: trips = [] } = useQuery<Trip[]>({
     queryKey: ["trips"],
     queryFn: fetchTrips,
+    throwOnError: true,
   });
 
   const [searchValue, setSearchValue] = useState("");
