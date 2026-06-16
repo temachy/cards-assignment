@@ -12,9 +12,8 @@ const TripCards = () => {
     isRatingSortEnabled,
     onRatingSort,
     onSearch,
-    isLoading,
-    error,
   } = useTripCards();
+
   return (
     <div className={styles.container}>
       <div className={styles.sidebar}>
@@ -50,14 +49,7 @@ const TripCards = () => {
           />
         ))}
       </div>
-      {!trips.length && !isLoading && (
-        <p className={styles.noTripsFound}>No trips found</p>
-      )}
-      {error && (
-        <p className={styles.noTripsFound}>
-          Error loading trips, details: {error.message}
-        </p>
-      )}
+      {!trips.length && <p className={styles.noTripsFound}>No trips found</p>}
       <Modal isOpen={!!selectedTrip} onClose={closeModal}>
         {selectedTrip && (
           <div className={styles.details}>

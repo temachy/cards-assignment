@@ -1,15 +1,11 @@
 import { useMemo, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useSuspenseQuery } from "@tanstack/react-query";
 import { fetchTrips } from "../../api/api";
 import type { Trip } from "../../types/trip.types";
 import { sortAndFilterTrips } from "./utils";
 
 export const useTripCards = () => {
-  const {
-    data: trips = [],
-    isLoading,
-    error,
-  } = useQuery<Trip[]>({
+  const { data: trips } = useSuspenseQuery<Trip[]>({
     queryKey: ["trips"],
     queryFn: fetchTrips,
   });
@@ -42,8 +38,6 @@ export const useTripCards = () => {
 
   return {
     trips: sortedAndFilteredTrips,
-    isLoading,
-    error,
     openModal,
     closeModal,
     selectedTrip,

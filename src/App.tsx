@@ -1,6 +1,7 @@
+import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import styles from "./App.module.scss";
-import { TripCards } from "./components";
+import { TripCards, TripCardsErrorBoundary, TripCardsSkeleton } from "./components";
 
 const App = () => (
   <ErrorBoundary
@@ -10,7 +11,11 @@ const App = () => (
       </p>
     }
   >
-    <TripCards />
+    <TripCardsErrorBoundary>
+      <Suspense fallback={<TripCardsSkeleton />}>
+        <TripCards />
+      </Suspense>
+    </TripCardsErrorBoundary>
   </ErrorBoundary>
 );
 
